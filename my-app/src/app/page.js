@@ -9,7 +9,7 @@ import CulturePage from '../components/CulturePage'
 import KeySection from '../components/keySection'
 import Footer from '../components/Footer'
 
-
+// this is home page 
 
 
 export default function HomePage() {
