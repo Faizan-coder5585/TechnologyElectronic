@@ -126,6 +126,7 @@ const Header = () => {
         <>
           <div className='toogle-cont grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto  p-4 ' >
           </div>
+<<<<<<< HEAD
           <div className="lg:hidden flex flex-col block bg-white text-black py-4 px-6 space-y-4 z-50 relative">
             <div className='border border-gray-300'>
               {/* About Us Dropdown */}
@@ -174,6 +175,45 @@ const Header = () => {
                 </details>
               </div>
             </div>
+=======
+          <div className="lg:hidden flex flex-col block bg-white text-black py-4 px-6 space-y-4 shadow-md z-50 relative">
+
+            {/* About Us Dropdown */}
+            <div>
+              <details className="cursor-pointer group">
+                <summary className="flex justify-between items-center uppercase py-2 border-b border-gray-300 hover:text-blue-500 cursor-pointer">
+                  About Us
+                  <ChevronDown
+                    size={16}
+                    className="transition-transform duration-300 ease-in-out group-open:rotate-180"
+                  />
+                </summary>
+                <div className="ml-4 mt-2 space-y-2">
+                  <Link href="/about/automotive" className="block hover:text-blue-500">Automotive</Link>
+                  <Link href="/about/industrial" className="block hover:text-blue-500">Industrial</Link>
+                  <Link href="/about/electronics" className="block hover:text-blue-500">Electronics</Link>
+                </div>
+              </details>
+            </div>
+            {/* Products Dropdown */}
+            <div>
+              <details className="cursor-pointer group">
+                <summary className="flex justify-between items-center uppercase py-2 border-b border-gray-300 hover:text-blue-500 cursor-pointer">
+                  Products
+                  <ChevronDown
+                    size={16}
+                    className="transition-transform duration-300 ease-in-out group-open:rotate-180"
+                  />
+                </summary>
+                <div className="ml-4 mt-2 space-y-2">
+                  <Link href="/about/automotive" className="block hover:text-blue-500">Automotive</Link>
+                  <Link href="/about/industrial" className="block hover:text-blue-500">Industrial</Link>
+                  <Link href="/about/electronics" className="block hover:text-blue-500">Electronics</Link>
+                </div>
+              </details>
+            </div>
+
+>>>>>>> 3db30824cdfc86b422f37f697745eb25fd9a68c2
           </div>
 
           {/* Nav Bar desktop*/}
@@ -226,7 +266,11 @@ const Header = () => {
           </main>
 
           <div className="md:col-span-2 bg-white">
+<<<<<<< HEAD
             <div className="flex flex-col lg:flex-row justify-between items-center max-w-7xl mx-auto px-4 py-7">
+=======
+            <div className="flex flex-col lg:flex-row justify-between items-center max-w-7xl mx-auto px-4">
+>>>>>>> 3db30824cdfc86b422f37f697745eb25fd9a68c2
 
               {/* Navigation Links */}
               <ul className="flex flex-wrap justify-center gap-4 text-sm text-gray-700 mb-4 lg:mb-0">
