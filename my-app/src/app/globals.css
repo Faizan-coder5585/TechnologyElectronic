@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+/* Root Theme Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary-color: 255, 0, 0; /* example red */
+    --secondary-color: 30, 144, 255; /* dodger blue */
+  }
+}
+
+/* Overlay Layer */
+.transparentLayer::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(80, 122, 250, 0.5); /* semi-transparent blue */
+  z-index: 40; /* below header z-50 */
+}
+
+/* List-like Symbol Styling */
+.before-item::before {
+  content: '•';
+  margin-right: 0.5rem;
+  color: #3b82f6; /* Tailwind blue-500 */
+}
+
+.after-item::after {
+  content: '→';
+  margin-left: 0.5rem;
+  color: #10b981; /* Tailwind green-500 */
+}
+
+/* Experience Card Decoration */
+.experience-box-after::after {
+  width: 50px;
+  height: calc(100% - 50px);
+  position: absolute;
+  content: "";
+  border: 4px solid #fff;
+  border-left: none;
+  top: 25px;
+  right: 20px;
+}
+
+/* Simple Slide-In Animation */
+@keyframes slideInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Card Hover Background Wipe */
+.card-hover::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgb(var(--primary-color, 219 234 254)); /* fallback: blue-100 */
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.card-hover:hover::after {
+  width: 100%;
+}
+
+/* Tailwind Extended Utilities */
+@layer utilities {
+  /* Slide Up Utility */
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 1s ease-out forwards;
+  }
+
+  /* Ripple Animation Utility */
+  @keyframes ripple {
+    0% {
+      box-shadow:
+        rgba(255, 255, 255, 0.3) 0 0 0 7.879px,
+        rgba(255, 255, 255, 0.3) 0 0 0 25.758px,
+        rgba(255, 255, 255, 0.063) 0 0 0 45.758px;
+    }
+    100% {
+      box-shadow:
+        rgba(255, 255, 255, 0) 0 0 0 7.879px,
+        rgba(255, 255, 255, 0) 0 0 0 25.758px,
+        rgba(255, 255, 255, 0) 0 0 0 45.758px;
+    }
+  }
+
+  .ripple-play-icon {
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    animation: ripple 1s linear infinite;
+  }
+}
+
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInUp {
+  animation: slideInUp 2s ease forwards;
+}
